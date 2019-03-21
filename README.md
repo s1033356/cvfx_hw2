@@ -105,21 +105,22 @@ Label maps:```labelme```
 Leon Gatys的Neural Style Transfer的思路是通過CNN（VGG-16）分別抽取content img、painting的feature maps。然後用content img的feature maps reconstrut出目標content；用painting的feature maps reconstrut出目標的style。根據生成圖的conten與目標內容的差異來optimize content；用生成圖與目標畫style的差異來optimize style。
 
 ![](https://i.imgur.com/127PQpN.png)
-*<center>Convolutional Neural Network (CNN) </center>*
-![](https://i.imgur.com/07ltGwM.png)
+*<p align="center">Convolutional Neural Network (CNN)</p>*
+![](https://i.imgur.com/hJTuaKq.png)
+*<p align="center">Neural Style Transfer process flow diagram (CNN)</p>*
 
 
 ### Steps
 ![](https://i.imgur.com/pyGVz9c.png)
-1. Content Loss
-  取任意圖像和目標圖像作為CNN的input，為了使兩圖的content相似，求得其二在Convolutional layer第l層的response，最小化2-範數誤差(Content Loss)：
-  ![](https://i.imgur.com/hHYAn6y.png)
-  這一誤差可以對本層response的每一元素求導：
-  ![](https://i.imgur.com/hJTuaKq.png)
-  求導後使用back-propagation方法，利用其更新輸入的圖像，使其和目標圖像的content靠近。
-2. Style Loss
-![](https://i.imgur.com/MM4nonW.png)
-![](https://i.imgur.com/YE22BGA.png)
+1. Content Loss<br>
+  取任意圖像和目標圖像作為CNN的input，為了使兩圖的content相似，求得其二在Convolutional layer第l層的response，最小化2-範數誤差(Content Loss)：<br>
+  ![](https://i.imgur.com/hHYAn6y.png)<br>
+  這一誤差可以對本層response的每一元素求導：<br>
+  ![](https://i.imgur.com/hJTuaKq.png)<br>
+  求導後使用back-propagation方法，利用其更新輸入的圖像，使其和目標圖像的content靠近。<br>
+2. Style Loss<br>
+![](https://i.imgur.com/MM4nonW.png)<br>
+![](https://i.imgur.com/YE22BGA.png)<br>
 
 3. Total Loss
 
@@ -133,7 +134,8 @@ Leon Gatys的Neural Style Transfer的思路是通過CNN（VGG-16）分別抽取c
 |![](https://i.imgur.com/HKVhjer.jpg)|![](https://i.imgur.com/9kS5xvC.jpg)|![](https://i.imgur.com/0WRjyHn.png)|
 |![](https://i.imgur.com/eq29Mwd.jpg)|![](https://i.imgur.com/xegIFZ3.jpg)|![](https://i.imgur.com/11iWesF.png)|
 |![](https://i.imgur.com/SmDclH7.jpg)|![](https://i.imgur.com/BiZcVEN.jpg)|![](https://i.imgur.com/rwF1F0n.png)|
-*<center> Neural Style Representation</center>*
+*<p align="center">Neural Style Representation</p>*
+
 
 
 
