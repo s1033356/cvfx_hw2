@@ -225,6 +225,7 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 | ![](https://i.imgur.com/DQO8q6V.jpg) | ![](https://i.imgur.com/oGmEq9c.jpg) | ![](https://i.imgur.com/gHIyO6I.jpg) | ![](https://i.imgur.com/xMl7dMg.jpg) |
 |![](https://i.imgur.com/6qDDbZT.jpg)|![](https://i.imgur.com/L8FOCjT.jpg)|![](https://i.imgur.com/CaPm4g8.jpg)|![](https://i.imgur.com/D0cXW2i.jpg)|
 |![](https://i.imgur.com/eCHRx9t.jpg)|![](https://i.imgur.com/GyVxLfi.jpg)|![](https://i.imgur.com/c51nKoU.jpg)|![](https://i.imgur.com/Uo8XG6E.jpg)|
+
 *<center> Photo taken by ourselves to monet with random styles. </center>*
 
 &emsp;&emsp;上面提到的results中，style code都是從style space中隨機取樣，因此我們測試將content code與reference style image的style code結合以生成圖片。但是從result可以發現生成結果比隨機取樣差很多。轉換後的照片只能在將色調轉換到referenced image上，但是無法符合reference image所在的domain的特徵。
