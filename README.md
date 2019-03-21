@@ -11,10 +11,10 @@
 
 ## FastPhotoStyle
  
-FastPhotoStyle 主要是通過Stylization和Smoothing兩個步驟進行。
-Mapping function：![](https://i.imgur.com/DTLtWXi.png)。
+FastPhotoStyle 主要是通過Stylization和Smoothing兩個步驟進行。<br>
+Mapping function：![](https://i.imgur.com/DTLtWXi.png)。<br>
 ![](https://i.imgur.com/ECppjUR.png)
-*<center>Illustration of the method</center>*
+*<p align="center">Illustration of the method</p>*
 
 ### Steps:
 
@@ -24,23 +24,24 @@ Mapping function：![](https://i.imgur.com/DTLtWXi.png)。
    
      1. decoder裡面用Unpooling代替Unsampling。(Unpooling層可以保留更好的局部細節。)
      2. 將特徵提取層中的pooling位置信息引入對稱的層中。
-![](https://i.imgur.com/zKs6K8d.png)
-*<center>Comparison between PhotoWCT and WCT</center>*
+![](https://i.imgur.com/zKs6K8d.png)<br>
+*<p align="center">Comparison between PhotoWCT and WCT</p>*
 
 2. Smoothing transform : F<sub>2</sub>(Y,I<sub>C</sub>),將上一步合成的圖片做平滑處理，消除F<sub>1</sub>過程中帶來的風格不一致的問題。 
 
    * 局部區域相似内容的pixel有相似的内容
    * 消除與整體風格較大的偏離
-   ![](https://i.imgur.com/HsLtbMG.png)
-   *y<sub>i</sub>:pixel color in Y
-   r<sub>i</sub>:pixel color in smoothed output R
-   d<sub>ii</sub>:diagonal element in the degree matrix D of W 
-   &emsp;(W is an affinity matrix of all pixels as nodes in a graph )
-   λ:control the balance*
-<br>![](https://i.imgur.com/u4gYQhM.png)
-   $α= \dfrac{1}{1+λ}$ 
-   $S=D^{-\dfrac{1}{2}}WD^{-\dfrac{1}{2}}\in R^{NxN}$ 
-   *<center>Smoothing step</center>*
+   
+   ![](https://i.imgur.com/HsLtbMG.png)<br>
+   <br>*y<sub>i</sub>:pixel color in Y<br>
+   <br>r<sub>i</sub>:pixel color in smoothed output R<br>
+   <br>d<sub>ii</sub>:diagonal element in the degree matrix D of W <br>
+   <br>&emsp;(W is an affinity matrix of all pixels as nodes in a graph )<br>
+   <br>λ:control the balance*
+   <br>![](https://i.imgur.com/u4gYQhM.png)
+   <br>![](https://i.imgur.com/iP7zd1O.gif)
+   <br>![](https://i.imgur.com/PiHUwPs.gif)
+*<p align="center">Smoothing step</p>*
 
 
 ### Result
@@ -61,14 +62,16 @@ Label maps:```labelme```
 |![](https://i.imgur.com/A4G456v.jpg)|![](https://i.imgur.com/ATAkDIk.png)|![](https://i.imgur.com/Cf5nGrr.jpg)|
 |![](https://i.imgur.com/rjaENcI.jpg)|![](https://i.imgur.com/sm390OM.png)|![](https://i.imgur.com/16zNsfW.jpg)|
 |![](https://i.imgur.com/MhrIEQm.jpg)|![](https://i.imgur.com/5Cs19zD.png)|![](https://i.imgur.com/EuTg38l.jpg)|
-*<center> comparison with labeled content images</center>*
+
+*<p align="center">comparison with labeled content images</p>*
 
 | Style Image|mual-label_ref |auto-label_ref |
 |:-------:|:----------:|:------:|
 |![](https://i.imgur.com/qhowXq6.jpg)|![](https://i.imgur.com/UQBIubB.png)|![](https://i.imgur.com/VmbtLmj.jpg)|
 |![](https://i.imgur.com/b2QfzAa.jpg)|![](https://i.imgur.com/IDKbvnJ.png)|![](https://i.imgur.com/nE97Ajm.jpg)|
 |![](https://i.imgur.com/tt78dnL.jpg)|![](https://i.imgur.com/jdxyebA.png)|![](https://i.imgur.com/rRUJj9t.jpg)|
-*<center> comparison with labeled style images </center>*
+
+*<p align="center">comparison with labeled style images</p>* 
 
 **Photo to Monet**
 
@@ -77,7 +80,8 @@ Label maps:```labelme```
 |![](https://i.imgur.com/1qfcZix.png)|![](https://i.imgur.com/x0y2vlx.png)|![](https://i.imgur.com/CqXL6bI.png)|
 |![](https://i.imgur.com/63C4FUf.png)|![](https://i.imgur.com/kZk3b2i.png)|![](https://i.imgur.com/JQBIq6m.png)|
 |![](https://i.imgur.com/Jwam0Az.png)|![](https://i.imgur.com/Oeinin5.png)|![](https://i.imgur.com/vp4m9bt.png)|
-*<center> comparison with result images(photo2Monet) </center>*
+
+*<p align="center">comparison with result images(photo2Monet) </p>*
 
 **Monet to photo**
 
@@ -86,56 +90,69 @@ Label maps:```labelme```
 |![](https://i.imgur.com/QH8AfXl.png)|![](https://i.imgur.com/8QH2d8U.png)|![](https://i.imgur.com/HzaWjWO.png)|
 |![](https://i.imgur.com/ZFhn0eU.png)|![](https://i.imgur.com/8Jvz8Yl.png)|![](https://i.imgur.com/bhIWuzo.png)|
 |![](https://i.imgur.com/TlTl69P.png)|![](https://i.imgur.com/DTop9J8.png)|![](https://i.imgur.com/OmvyVXb.png)|
-*<center> comparison with result images(Monet2photo) </center>*
 
-&emsp;&emsp;在生成label images的兩種方式中，自動生成label images的方法（ex3）比較偏向以色域來切割segment，當content image和style image對應segment的差異較大時，效果不如ex1和ex2。
+*<p align="center"> comparison with result images(Monet2photo) </p>*
+
+&emsp;&emsp;在生成label images的兩種方式中，自動生成label images的方法（ex3）比較偏向以色域來切割segment，當content image和style image對應segment的差異較大時，效果不如ex1和ex2。<br>
 &emsp;&emsp;FastPhotoStyle效果還是略偏向於color transfer，在photo2Monet的轉換中，style transfer並不是很明顯;而在Monet2photo的轉換中，色彩轉移較寫實，效果更好。
+
 
 
 
 ---
 
 ## Neural Style
-Leon Gatys的Neural Style Transfer的思路是通過CNN（VGG-16）分別抽取content img、painting的feature maps。然後用content img的feature maps reconstrut出目標content；用painting的feature maps reconstrut出目標的style。根據生成圖的conten與目標內容的差異來optimize content；用生成圖與目標畫style的差異來optimize style。
+Leon Gatys的Neural Style Transfer的思路是通過CNN（pre-trained VGG-16）網路分別抽取內容圖（content）、畫風圖(style)以及生成圖的特徵圖(feature maps)，然後分別用內容特徵和生成特徵圖計算內容損失(Content loss)，用畫風圖和生成圖計算風格損失(Style loss)，將兩個損失合起來，作為總體損失(Total loss)，用總體損失來計算生成圖的梯度然後更新生成圖。框架及流程圖如下所示。
 
 ![](https://i.imgur.com/127PQpN.png)
-*<center>Convolutional Neural Network (CNN) </center>*
+*<p align="center">Convolutional Neural Network (CNN)</p>*
 ![](https://i.imgur.com/07ltGwM.png)
+*<p align="center">Neural Style Transfer process flow diagram</p>*
 
 
 ### Steps
 ![](https://i.imgur.com/pyGVz9c.png)
 1. Content Loss
-  取任意圖像和目標圖像作為CNN的input，為了使兩圖的content相似，求得其二在Convolutional layer第l層的response，最小化2-範數誤差(Content Loss)：
-  ![](https://i.imgur.com/hHYAn6y.png)
-  這一誤差可以對本層response的每一元素求導：
-  ![](https://i.imgur.com/hJTuaKq.png)
+  取任意圖像（高斯噪聲圖）和目標圖像作為CNN的input，為了使兩圖的content相似，求得其二在Convolutional layer第l層的response，最小化2-範數誤差(Content Loss)：</br>
+  ![](https://i.imgur.com/hHYAn6y.png)</br>
+  這一誤差可以對本層response的每一元素求導：</br>
+  ![](https://i.imgur.com/hJTuaKq.png)</br>
   求導後使用back-propagation方法，利用其更新輸入的圖像，使其和目標圖像的content靠近。
 2. Style Loss
-![](https://i.imgur.com/MM4nonW.png)
-![](https://i.imgur.com/YE22BGA.png)
+    假設某一層得到的Response是![](https://i.imgur.com/sAbiIyO.png),其中![](https://i.imgur.com/hc5P8Nf.png)為l層filter的個數，![](https://i.imgur.com/308nm97.png)為filter的大小。![](https://i.imgur.com/O8Y0poH.png)表示的是第l層第i個filter在位置j的輸出。 
+    ![](https://i.imgur.com/sLcKIgo.png)代表提供Content的圖像，![](https://i.imgur.com/LxzBL6b.png)表示生成的圖像，![](https://i.imgur.com/G1mo1OY.png)和![](https://i.imgur.com/p1JPSc5.png)分別代表它們對於l層的回應，因此l層的Content Loss：</br> 
 
-3. Total Loss
+   ![](https://i.imgur.com/MM4nonW.png)</br>
+   文章中作者使用了多層來表達Style，所以總的Style Loss為：</br> 
+![](https://i.imgur.com/YE22BGA.png)</br>
+
+3. Total Loss<br>定義好了兩個Loss之後，就利用優化方法來最小化總的Loss： </br>
 
 
-![](https://i.imgur.com/BjK3W4a.png)
+    ![](https://i.imgur.com/BjK3W4a.png)</br>
+    其中α和β代表了圖像content與style的側重，文中對α/β的取值也進了實驗，效果如下：</br>
+    ![](https://i.imgur.com/IhiTDrQ.png)</br>
+    生成的圖片將a的content與p的style融合在一起，上圖從左到右四列分別是α/β = 10^-5,     10^-4,10^-3, 10^-2.也就是α越來越大，的確圖像也越來越清晰地呈現出了照片的內容</br>
 
 
 ### Result
-| Content Image|Target Image |Result |
+**Monet to photo**
+
+| Content Image|Style Image |Result |
 |:-------:|:----------:|:------:|
 |![](https://i.imgur.com/HKVhjer.jpg)|![](https://i.imgur.com/9kS5xvC.jpg)|![](https://i.imgur.com/0WRjyHn.png)|
 |![](https://i.imgur.com/eq29Mwd.jpg)|![](https://i.imgur.com/xegIFZ3.jpg)|![](https://i.imgur.com/11iWesF.png)|
 |![](https://i.imgur.com/SmDclH7.jpg)|![](https://i.imgur.com/BiZcVEN.jpg)|![](https://i.imgur.com/rwF1F0n.png)|
-*<center> Neural Style Representation</center>*
+
+*<p align="center">Neural Style Representation</p>*
 
 
 
+### Implement
 Leon Gatys的Style Transfer演算法結果直觀，理論簡潔在github上有各種平臺的源碼實現： 
 - 基於Torch的[Neural-Style](https://github.com/jcjohnson/neural-style) 
 - 基於Tensorflow的[Neural Art](https://github.com/woodrush/neural-art-tf)
 - 基於Caffe的[Style Transfer](https://github.com/fzliu/style-transfer)。
-
 
 
 ---
@@ -176,7 +193,12 @@ Leon Gatys的Style Transfer演算法結果直觀，理論簡潔在github上有�
 ![](https://i.imgur.com/nmsKiXE.jpg)<br/>
 *<center> Monet to Photo.(Left) Monet painting. (Middle) Monet to photo with a fixed style. (Right) Monet to photo with random styles. </center>*
 
-&emsp;&emsp;在content space是monet domain和photo domain享有的共同特徵這項假設之下，我們觀察生成圖片發現content code只能保有原始圖片的構圖及輪廓而缺少輪廓的semantic meaning。因此當我們使用莫內的畫的content code以及從photo的style space中取樣產生的style code生成圖片時，生成出的圖片會保有content code的結構，但是缺乏相似結構在原圖中的semantic meaning。例如：生成圖片保有原圖中樹叢的結構，但是把樹叢變成山脈；前方坡地變成雲海；湖變成雲海中間的洞。
+&emsp;&emsp;在content space是monet domain和photo domain享有的共同特徵這項假設之下，我們觀察生成圖片發現content code只能保有原始圖片的構圖及輪廓而缺少輪廓的semantic meaning。因此當我們使用莫內的畫的content code以及從photo的style space中取樣產生的style code生成圖片時，生成出的圖片會保有content code的結構，但是缺乏相似結構在原圖中的semantic meaning。例如：*Fig 3-1* 中生成圖片保有原圖中樹叢的結構，但是把樹叢變成山脈；前方坡地變成雲海；湖變成雲海中間的洞。
+
+<br/>![](https://i.imgur.com/OOrxIHh.jpg)
+![](https://i.imgur.com/zHlrBjn.jpg)
+![](https://i.imgur.com/DNfx49B.jpg)<br/>
+*<center> Fig 3-1: 生成圖片與原圖有相似的用紅線畫起來的結構. </center>*
 
 &emsp;&emsp;除此之外，生成出的圖片整體色調以及光線很漂亮。尤其是在處理像是極光、雲海這種平滑的自然影像。
 
@@ -262,13 +284,16 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 | *(Vertical)* target *(Horizontal)* source |![](https://i.imgur.com/tSj1y7T.jpg)|![](https://i.imgur.com/f96XV0C.jpg)|![](https://i.imgur.com/1xfwusb.jpg)|
 |![](https://i.imgur.com/jWct2Cv.jpg)|![](https://i.imgur.com/QDVGUWi.jpg)|![](https://i.imgur.com/EzvJn4w.jpg)|![](https://i.imgur.com/5F4CWA7.jpg)|
 
-*<center> Photo taken by ourselves to monet using Image Quilting. </center>*
+*<p align="center"> Photo taken by ourselves to monet using Image Quilting. </p>*
 
 &emsp;&emsp;雖然在接上patch中有根據最小差異路徑做剪接，但是在生成的圖片之仍然可以看到明顯patch的痕跡。原本估計比較`conv5_1`生成比較複雜的texture經過Image Quilting後可以得到效果比較好的圖片，不過實驗後發現效果和使用`conv1_1``conv3_1`texture的生成圖片相差不遠。
 
 ---
 
 ## Conclusion
+&emsp;&emsp;**FastPhotoStyle**嘗試直接進行style transfer，手動劃分segment來進行對應segment之間的style transfer，以及在自動劃分segment的基礎上進行style transfer。雖然可以達到轉換的目的，但是對於真實場景與藝術風格之間的轉換有一定的限度，需要較為對應的segment劃分以及適當的顏色融合。在真實場景（photo2photo）的轉換中，效果會更好一些。
+
+&emsp;&emsp;**Neural Style**此方法使用VGG-19分類網絡，VGG-19作為ImageNet冠軍Model擁有良好的類別萃取能力，最後生成的圖片在顏色和油畫的質感跟目標圖像都十分靠近，質感一流，但是由於算法需要反復迭代，圖像轉換速度太慢，難以運用於real-time的應用上。
 
 &emsp;&emsp;**MUNIT**對random style code生成的圖片缺乏semantic meaning但是能保持原圖片的結構，在生成自然影像上可以產生漂亮的色調跟光線；Munit對referenced style code無法生成對應domain裡的圖片，我們認為可能是在adversarial loss中缺少對referensed style code做評分的關係。
 
@@ -285,3 +310,4 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 [1] Li, Y., Liu, M.Y., Li, X., Yang, M.H., Kautz, J.: A closed-form solution to photorealistic image stylization. In: ECCV, 2018.<br>
 [2]X. Huang, M.-Y. Liu, S. Belongie, and J. Kautz, “Multi-modal unsupervised image-to-image translation,” arXiv preprint arXiv:1804.04732, 2018.<br>
 [3]A. Efros and W.T. Freeman. Image quilting for texture synthesis and transfer. In Proc. ACM Conf. Comp. Graphics (SIGGRAPH), pages 341–346, Eugene Fiume, August 2001.<br>
+[4]Gatys, Leon A ; Ecker, Alexander S ; Bethge, Matthias,2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), June 2016, pp.2414-2423.<br>
