@@ -104,9 +104,9 @@ Label maps:```labelme```
 ## Neural Style
 Leon Gatys的Neural Style Transfer的思路是通過CNN（pre-trained VGG-16）網路分別抽取內容圖（content）、畫風圖(style)以及生成圖的特徵圖(feature maps)，然後分別用內容特徵和生成特徵圖計算內容損失(Content loss)，用畫風圖和生成圖計算風格損失(Style loss)，將兩個損失合起來，作為總體損失(Total loss)，用總體損失來計算生成圖的梯度然後更新生成圖。框架及流程圖如下所示。
 
-![](https://i.imgur.com/hHYAn6y.png)
+![](https://i.imgur.com/127PQpN.png)
 *<p align="center">Convolutional Neural Network (CNN)</p>*
-![](https://i.imgur.com/hJTuaKq.png)
+![](https://i.imgur.com/07ltGwM.png)
 *<p align="center">Neural Style Transfer process flow diagram</p>*
 
 
@@ -137,13 +137,14 @@ Leon Gatys的Neural Style Transfer的思路是通過CNN（pre-trained VGG-16）�
 
 ### Result
 **Monet to photo**
-| Content Image|Target Image |Result |
+
+| Content Image|Style Image |Result |
 |:-------:|:----------:|:------:|
 |![](https://i.imgur.com/HKVhjer.jpg)|![](https://i.imgur.com/9kS5xvC.jpg)|![](https://i.imgur.com/0WRjyHn.png)|
 |![](https://i.imgur.com/eq29Mwd.jpg)|![](https://i.imgur.com/xegIFZ3.jpg)|![](https://i.imgur.com/11iWesF.png)|
 |![](https://i.imgur.com/SmDclH7.jpg)|![](https://i.imgur.com/BiZcVEN.jpg)|![](https://i.imgur.com/rwF1F0n.png)|
 
-*<p align="Neural Style Representation</p>*
+*<p align="center">Neural Style Representation</p>*
 
 
 
