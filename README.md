@@ -176,7 +176,12 @@ Leon Gatys的Style Transfer演算法結果直觀，理論簡潔在github上有�
 ![](https://i.imgur.com/nmsKiXE.jpg)<br/>
 *<center> Monet to Photo.(Left) Monet painting. (Middle) Monet to photo with a fixed style. (Right) Monet to photo with random styles. </center>*
 
-&emsp;&emsp;在content space是monet domain和photo domain享有的共同特徵這項假設之下，我們觀察生成圖片發現content code只能保有原始圖片的構圖及輪廓而缺少輪廓的semantic meaning。因此當我們使用莫內的畫的content code以及從photo的style space中取樣產生的style code生成圖片時，生成出的圖片會保有content code的結構，但是缺乏相似結構在原圖中的semantic meaning。例如：生成圖片保有原圖中樹叢的結構，但是把樹叢變成山脈；前方坡地變成雲海；湖變成雲海中間的洞。
+&emsp;&emsp;在content space是monet domain和photo domain享有的共同特徵這項假設之下，我們觀察生成圖片發現content code只能保有原始圖片的構圖及輪廓而缺少輪廓的semantic meaning。因此當我們使用莫內的畫的content code以及從photo的style space中取樣產生的style code生成圖片時，生成出的圖片會保有content code的結構，但是缺乏相似結構在原圖中的semantic meaning。例如：*Fig 3-1* 中生成圖片保有原圖中樹叢的結構，但是把樹叢變成山脈；前方坡地變成雲海；湖變成雲海中間的洞。
+
+<br/>![](https://i.imgur.com/OOrxIHh.jpg)
+![](https://i.imgur.com/zHlrBjn.jpg)
+![](https://i.imgur.com/DNfx49B.jpg)<br/>
+*<center> Fig 3-1: 生成圖片與原圖有相似的用紅線畫起來的結構. </center>*
 
 &emsp;&emsp;除此之外，生成出的圖片整體色調以及光線很漂亮。尤其是在處理像是極光、雲海這種平滑的自然影像。
 
