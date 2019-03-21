@@ -11,10 +11,10 @@
 
 ## FastPhotoStyle
  
-FastPhotoStyle 主要是通過Stylization和Smoothing兩個步驟進行。
-Mapping function：![](https://i.imgur.com/DTLtWXi.png)。
+FastPhotoStyle 主要是通過Stylization和Smoothing兩個步驟進行。<br>
+Mapping function：![](https://i.imgur.com/DTLtWXi.png)。<br>
 ![](https://i.imgur.com/ECppjUR.png)
-*<center>Illustration of the method</center>*
+*<p align="center">Illustration of the method</p>*
 
 ### Steps:
 
@@ -24,23 +24,24 @@ Mapping function：![](https://i.imgur.com/DTLtWXi.png)。
    
      1. decoder裡面用Unpooling代替Unsampling。(Unpooling層可以保留更好的局部細節。)
      2. 將特徵提取層中的pooling位置信息引入對稱的層中。
-![](https://i.imgur.com/zKs6K8d.png)
-*<center>Comparison between PhotoWCT and WCT</center>*
+![](https://i.imgur.com/zKs6K8d.png)<br>
+*<p align="center">Comparison between PhotoWCT and WCT</p>*
 
 2. Smoothing transform : F<sub>2</sub>(Y,I<sub>C</sub>),將上一步合成的圖片做平滑處理，消除F<sub>1</sub>過程中帶來的風格不一致的問題。 
 
    * 局部區域相似内容的pixel有相似的内容
    * 消除與整體風格較大的偏離
-   ![](https://i.imgur.com/HsLtbMG.png)
-   *y<sub>i</sub>:pixel color in Y
-   r<sub>i</sub>:pixel color in smoothed output R
-   d<sub>ii</sub>:diagonal element in the degree matrix D of W 
-   &emsp;(W is an affinity matrix of all pixels as nodes in a graph )
-   λ:control the balance*
-<br>![](https://i.imgur.com/u4gYQhM.png)
-   $α= \dfrac{1}{1+λ}$ 
-   $S=D^{-\dfrac{1}{2}}WD^{-\dfrac{1}{2}}\in R^{NxN}$ 
-   *<center>Smoothing step</center>*
+   
+   ![](https://i.imgur.com/HsLtbMG.png)<br>
+   <br>*y<sub>i</sub>:pixel color in Y<br>
+   <br>r<sub>i</sub>:pixel color in smoothed output R<br>
+   <br>d<sub>ii</sub>:diagonal element in the degree matrix D of W <br>
+   <br>&emsp;(W is an affinity matrix of all pixels as nodes in a graph )<br>
+   <br>λ:control the balance*
+   <br>![](https://i.imgur.com/u4gYQhM.png)
+   <br>![](https://i.imgur.com/iP7zd1O.gif)
+   <br>![](https://i.imgur.com/PiHUwPs.gif)
+*<p align="center">Smoothing step</p>*
 
 
 ### Result
@@ -61,14 +62,16 @@ Label maps:```labelme```
 |![](https://i.imgur.com/A4G456v.jpg)|![](https://i.imgur.com/ATAkDIk.png)|![](https://i.imgur.com/Cf5nGrr.jpg)|
 |![](https://i.imgur.com/rjaENcI.jpg)|![](https://i.imgur.com/sm390OM.png)|![](https://i.imgur.com/16zNsfW.jpg)|
 |![](https://i.imgur.com/MhrIEQm.jpg)|![](https://i.imgur.com/5Cs19zD.png)|![](https://i.imgur.com/EuTg38l.jpg)|
-*<center> comparison with labeled content images</center>*
+
+*<p align="center">comparison with labeled content images</p>*
 
 | Style Image|mual-label_ref |auto-label_ref |
 |:-------:|:----------:|:------:|
 |![](https://i.imgur.com/qhowXq6.jpg)|![](https://i.imgur.com/UQBIubB.png)|![](https://i.imgur.com/VmbtLmj.jpg)|
 |![](https://i.imgur.com/b2QfzAa.jpg)|![](https://i.imgur.com/IDKbvnJ.png)|![](https://i.imgur.com/nE97Ajm.jpg)|
 |![](https://i.imgur.com/tt78dnL.jpg)|![](https://i.imgur.com/jdxyebA.png)|![](https://i.imgur.com/rRUJj9t.jpg)|
-*<center> comparison with labeled style images </center>*
+
+*<p align="center">comparison with labeled style images</p>* 
 
 **Photo to Monet**
 
@@ -77,7 +80,8 @@ Label maps:```labelme```
 |![](https://i.imgur.com/1qfcZix.png)|![](https://i.imgur.com/x0y2vlx.png)|![](https://i.imgur.com/CqXL6bI.png)|
 |![](https://i.imgur.com/63C4FUf.png)|![](https://i.imgur.com/kZk3b2i.png)|![](https://i.imgur.com/JQBIq6m.png)|
 |![](https://i.imgur.com/Jwam0Az.png)|![](https://i.imgur.com/Oeinin5.png)|![](https://i.imgur.com/vp4m9bt.png)|
-*<center> comparison with result images(photo2Monet) </center>*
+
+*<p align="center">comparison with result images(photo2Monet) </p>*
 
 **Monet to photo**
 
@@ -86,10 +90,12 @@ Label maps:```labelme```
 |![](https://i.imgur.com/QH8AfXl.png)|![](https://i.imgur.com/8QH2d8U.png)|![](https://i.imgur.com/HzaWjWO.png)|
 |![](https://i.imgur.com/ZFhn0eU.png)|![](https://i.imgur.com/8Jvz8Yl.png)|![](https://i.imgur.com/bhIWuzo.png)|
 |![](https://i.imgur.com/TlTl69P.png)|![](https://i.imgur.com/DTop9J8.png)|![](https://i.imgur.com/OmvyVXb.png)|
-*<center> comparison with result images(Monet2photo) </center>*
 
-&emsp;&emsp;在生成label images的兩種方式中，自動生成label images的方法（ex3）比較偏向以色域來切割segment，當content image和style image對應segment的差異較大時，效果不如ex1和ex2。
+*<p align="center"> comparison with result images(Monet2photo) </p>*
+
+&emsp;&emsp;在生成label images的兩種方式中，自動生成label images的方法（ex3）比較偏向以色域來切割segment，當content image和style image對應segment的差異較大時，效果不如ex1和ex2。<br>
 &emsp;&emsp;FastPhotoStyle效果還是略偏向於color transfer，在photo2Monet的轉換中，style transfer並不是很明顯;而在Monet2photo的轉換中，色彩轉移較寫實，效果更好。
+
 
 
 
