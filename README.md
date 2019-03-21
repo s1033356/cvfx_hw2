@@ -248,17 +248,17 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 
 ### Results
 |Target Image|Source Texture:Conv1_1|Source Texture:Conv3_1| Source Texture:Conv5_1|
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | *(Vertical)* target *(Horizontal)* source |![](https://i.imgur.com/XCB9XyM.jpg)|![](https://i.imgur.com/xq7YyJo.jpg)|![](https://i.imgur.com/qsIU5Jo.jpg)|
 |![](https://i.imgur.com/hMXmNFN.jpg)|![](https://i.imgur.com/15xfHck.jpg)|![](https://i.imgur.com/3IrL8CY.jpg)|![](https://i.imgur.com/HqBQdic.jpg)|
 
 |Target Image|Source Texture:Conv1_1|Source Texture:Conv3_1| Source Texture:Conv5_1|
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | *(Vertical)* target *(Horizontal)* source |![](https://i.imgur.com/xJyCCrz.jpg)|![](https://i.imgur.com/vdBGSDT.jpg)|![](https://i.imgur.com/yaOlxRv.jpg)|
 |![](https://i.imgur.com/yHJpMYG.jpg)|![](https://i.imgur.com/mhp7Cg6.jpg)|![](https://i.imgur.com/sEW5mjd.jpg)|![](https://i.imgur.com/EzLZnbh.jpg)|
 
 |Target Image|Source Texture:Conv1_1|Source Texture:Conv3_1| Source Texture:Conv5_1|
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | *(Vertical)* target *(Horizontal)* source |![](https://i.imgur.com/tSj1y7T.jpg)|![](https://i.imgur.com/f96XV0C.jpg)|![](https://i.imgur.com/1xfwusb.jpg)|
 |![](https://i.imgur.com/jWct2Cv.jpg)|![](https://i.imgur.com/QDVGUWi.jpg)|![](https://i.imgur.com/EzvJn4w.jpg)|![](https://i.imgur.com/5F4CWA7.jpg)|
 
