@@ -273,13 +273,14 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 | *(Vertical)* target *(Horizontal)* source |![](https://i.imgur.com/tSj1y7T.jpg)|![](https://i.imgur.com/f96XV0C.jpg)|![](https://i.imgur.com/1xfwusb.jpg)|
 |![](https://i.imgur.com/jWct2Cv.jpg)|![](https://i.imgur.com/QDVGUWi.jpg)|![](https://i.imgur.com/EzvJn4w.jpg)|![](https://i.imgur.com/5F4CWA7.jpg)|
 
-*<center> Photo taken by ourselves to monet using Image Quilting. </center>*
+*<p align="center"> Photo taken by ourselves to monet using Image Quilting. </p>*
 
 &emsp;&emsp;雖然在接上patch中有根據最小差異路徑做剪接，但是在生成的圖片之仍然可以看到明顯patch的痕跡。原本估計比較`conv5_1`生成比較複雜的texture經過Image Quilting後可以得到效果比較好的圖片，不過實驗後發現效果和使用`conv1_1``conv3_1`texture的生成圖片相差不遠。
 
 ---
 
 ## Conclusion
+&emsp;&emsp;**FastPhotoStyle**嘗試直接進行style transfer，手動劃分segment來進行對應segment之間的style transfer，以及在自動劃分segment的基礎上進行style transfer。雖然可以達到轉換的目的，但是對於真實場景與藝術風格之間的轉換有一定的限度，需要較為對應的segment劃分以及適當的顏色融合。在真實場景（photo2photo）的轉換中，效果會更好一些。
 
 &emsp;&emsp;**MUNIT**對random style code生成的圖片缺乏semantic meaning但是能保持原圖片的結構，在生成自然影像上可以產生漂亮的色調跟光線；Munit對referenced style code無法生成對應domain裡的圖片，我們認為可能是在adversarial loss中缺少對referensed style code做評分的關係。
 
