@@ -198,6 +198,7 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 | --- | --- | --- | --- |
 | *(Vertical)* content *(Horizontal)* style | ![](https://i.imgur.com/2t6Tj2h.jpg) | ![](https://i.imgur.com/cbBWqjy.jpg) | ![](https://i.imgur.com/NEhF6bt.jpg) |
 | ![](https://i.imgur.com/sODB8Yl.jpg) | ![](https://i.imgur.com/QyithXG.jpg) | ![](https://i.imgur.com/obgtQbY.jpg) | ![](https://i.imgur.com/y0g9JZw.jpg) |
+
 *<center> Monet to photo with reference styles. </center>*
 
 | Contents | Style 1 | Style 2 | Style 3 |
@@ -206,6 +207,7 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 | ![](https://i.imgur.com/r9uCKcO.jpg) | ![](https://i.imgur.com/rGUPnpo.jpg) | ![](https://i.imgur.com/QRWpEu8.jpg) | ![](https://i.imgur.com/0DGuZLQ.jpg) |
 | ![](https://i.imgur.com/yvtv8Bt.jpg) | ![](https://i.imgur.com/OQFz3TS.jpg) | ![](https://i.imgur.com/0FpEd4I.jpg) | ![](https://i.imgur.com/21uiAaw.jpg) |
 | ![](https://i.imgur.com/5clONHQ.jpg) | ![](https://i.imgur.com/aAxLngb.jpg) | ![](https://i.imgur.com/g68xMOy.jpg) | ![](https://i.imgur.com/L5vv4cM.jpg) |
+
 *<center> Monet to photo taken by ourselves with reference styles. </center>*
 
 
