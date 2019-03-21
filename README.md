@@ -192,14 +192,15 @@ Leon Gatys的Style Transfer演算法結果直觀，理論簡潔在github上有�
 &emsp;&emsp;除此之外，生成出的圖片整體色調以及光線很漂亮。尤其是在處理像是極光、雲海這種平滑的自然影像。
 
 **Photo to Monet**
-<br/>![](https://i.imgur.com/n2Yldh8.jpg)
+<p align="center">![](https://i.imgur.com/n2Yldh8.jpg)
 ![](https://i.imgur.com/vu55FyW.jpg)
 ![](https://i.imgur.com/T5ZhVcG.jpg)
 ![](https://i.imgur.com/T9ZvefT.jpg)
 ![](https://i.imgur.com/fcUjK4i.jpg)
-![](https://i.imgur.com/wBf7Rjc.jpg)<br/>
-*<center> Photo to Monet.(Left) Photo. (Middle) Photo to monet with a 
-fixed style. (Right) Photo to monet with random styles. </center>*
+![](https://i.imgur.com/wBf7Rjc.jpg)</p>
+
+*<p align="center"> Photo to Monet.(Left) Photo. (Middle) Photo to monet with a 
+fixed style. (Right) Photo to monet with random styles. </p>*
 
 &emsp;&emsp;我們也可以在photo to monet中觀察到前面提到保有輪廓，但是缺乏semantic meaning這項問題。然而跟從畫生成自然影像相較之下，因為是生成畫的關係，對於缺少semantice meaning這件事的就反而沒有那麼重要。
 
