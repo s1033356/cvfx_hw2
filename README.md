@@ -16,7 +16,7 @@ Mapping function：![](https://i.imgur.com/DTLtWXi.png)。<br>
 ![](https://i.imgur.com/ECppjUR.png)<br>
 *<p align="center">Illustration of the method</p>*
 
-### Steps:
+### Steps
 
 1. Stylization transform：Y=F<sub>1</sub>(I<sub>C</sub>,I<sub>S</sub>)，將I<sub>S</sub>(style image)上的風格轉移到I<sub>C</sub>(content image)上
 
@@ -192,7 +192,7 @@ Leon Gatys的Style Transfer演算法結果直觀，理論簡潔在github上有�
 ![](https://i.imgur.com/8i0x0Na.jpg)
 ![](https://i.imgur.com/Y25i1Is.jpg)
 ![](https://i.imgur.com/nmsKiXE.jpg)<br/>
-*<center> Monet to Photo.(Left) Monet painting. (Middle) Monet to photo with a fixed style. (Right) Monet to photo with random styles. </center>*
+*<p align="center"> Monet to Photo.(Left) Monet painting. (Middle) Monet to photo with a fixed style. (Right) Monet to photo with random styles. </p>*
 
 &emsp;&emsp;在content space是monet domain和photo domain享有的共同特徵這項假設之下，我們觀察生成圖片發現content code只能保有原始圖片的構圖及輪廓而缺少輪廓的semantic meaning。因此當我們使用莫內的畫的content code以及從photo的style space中取樣產生的style code生成圖片時，生成出的圖片會保有content code的結構，但是缺乏相似結構在原圖中的semantic meaning。例如：*Fig 3-1* 中生成圖片保有原圖中樹叢的結構，但是把樹叢變成山脈；前方坡地變成雲海；湖變成雲海中間的洞。
 
@@ -210,8 +210,8 @@ Leon Gatys的Style Transfer演算法結果直觀，理論簡潔在github上有�
 ![](https://i.imgur.com/T9ZvefT.jpg)
 ![](https://i.imgur.com/fcUjK4i.jpg)
 ![](https://i.imgur.com/wBf7Rjc.jpg)<br/>
-*<center> Photo to Monet.(Left) Photo. (Middle) Photo to monet with a 
-fixed style. (Right) Photo to monet with random styles. </center>*
+*<p align="center"> Photo to Monet.(Left) Photo. (Middle) Photo to monet with a 
+fixed style. (Right) Photo to monet with random styles. </p>*
 
 &emsp;&emsp;我們也可以在photo to monet中觀察到前面提到保有輪廓，但是缺乏semantic meaning這項問題。然而跟從畫生成自然影像相較之下，因為是生成畫的關係，對於缺少semantice meaning這件事的就反而沒有那麼重要。
 
@@ -222,7 +222,7 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 | *(Vertical)* content *(Horizontal)* style | ![](https://i.imgur.com/2t6Tj2h.jpg) | ![](https://i.imgur.com/cbBWqjy.jpg) | ![](https://i.imgur.com/NEhF6bt.jpg) |
 | ![](https://i.imgur.com/sODB8Yl.jpg) | ![](https://i.imgur.com/QyithXG.jpg) | ![](https://i.imgur.com/obgtQbY.jpg) | ![](https://i.imgur.com/y0g9JZw.jpg) |
 
-*<center> Monet to photo with reference styles. </center>*
+*<p align="center"> Monet to photo with reference styles. </p>*
 
 | Contents | Style 1 | Style 2 | Style 3 |
 | --- | --- | --- | --- |
@@ -231,7 +231,7 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 | ![](https://i.imgur.com/yvtv8Bt.jpg) | ![](https://i.imgur.com/OQFz3TS.jpg) | ![](https://i.imgur.com/0FpEd4I.jpg) | ![](https://i.imgur.com/21uiAaw.jpg) |
 | ![](https://i.imgur.com/5clONHQ.jpg) | ![](https://i.imgur.com/aAxLngb.jpg) | ![](https://i.imgur.com/g68xMOy.jpg) | ![](https://i.imgur.com/L5vv4cM.jpg) |
 
-*<center> Monet to photo taken by ourselves with reference styles. </center>*
+*<p align="center"> Monet to photo taken by ourselves with reference styles. </p>*
 
 
 | Contents | Style 1 | Style 2 | Style 3 |
@@ -241,7 +241,7 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 | ![](https://i.imgur.com/6s2BOvJ.jpg) | ![](https://i.imgur.com/mYDcP6Q.jpg) | ![](https://i.imgur.com/TAkob97.jpg) | ![](https://i.imgur.com/PoUBkCD.jpg) |
 | ![](https://i.imgur.com/qLa9IZ6.jpg) | ![](https://i.imgur.com/b1LdcLj.jpg) | ![](https://i.imgur.com/rAnIGNU.jpg) | ![](https://i.imgur.com/zT33DKg.jpg) |
 
-*<center> Photo taken by ourselves to monet with reference styles. </center>*
+*<p align="center"> Photo taken by ourselves to monet with reference styles. </p>*
 
 | Contents | Random Style 1 | Random Style 2 | Random Style 3 |
 | --- | --- | --- | --- |
@@ -249,7 +249,7 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 |![](https://i.imgur.com/6qDDbZT.jpg)|![](https://i.imgur.com/L8FOCjT.jpg)|![](https://i.imgur.com/CaPm4g8.jpg)|![](https://i.imgur.com/D0cXW2i.jpg)|
 |![](https://i.imgur.com/eCHRx9t.jpg)|![](https://i.imgur.com/GyVxLfi.jpg)|![](https://i.imgur.com/c51nKoU.jpg)|![](https://i.imgur.com/Uo8XG6E.jpg)|
 
-*<center> Photo taken by ourselves to monet with random styles. </center>*
+*<p align="center">Photo taken by ourselves to monet with random styles. </p>*
 
 &emsp;&emsp;上面提到的results中，style code都是從style space中隨機取樣，因此我們測試將content code與reference style image的style code結合以生成圖片。但是從result可以發現生成結果比隨機取樣差很多。轉換後的照片只能在將色調轉換到referenced image上，但是無法符合reference image所在的domain的特徵。
 &emsp;&emsp;我們認為可能是由encoder產生的style code上的缺陷導致失敗的結果。從Adversarial loss以及pytorch code上發現目的是讓生成出的影像和真實的影像沒有差異的adversarial loss中都是以random sampled style code作為style code並生成影像，並沒有將encoded style code加入adversarial loss之中。這項差異可能使decoder無法根據encoded style code產生出好的結果，或是encoder無法產生好的style code。
@@ -261,7 +261,7 @@ fixed style. (Right) Photo to monet with random styles. </center>*
 ## Image Quilting for Texture Synthesis and Transfer
 &emsp;&emsp;Image Quilting比對target image中的patch與source texture中每一個patch的相似性，並將source texture中最相似的patch貼到生成影像上。在貼到生成影像的過程中為了降低視覺上的衝突，Image Quilting在要生成的patch與已生成區域的重複區塊中找到差異最小的路徑。找到路徑後再以路徑為基準將patch接上已生成區域。
 <br/><center>![](https://i.imgur.com/OgcOv9z.jpg)</center><br/>
-<center>*接合方式不同導致視覺效果上的差異。(左)沒有重疊區域 (中)有重疊區域 (右)使用差異最小的路徑*</center>
+*<p align="center">接合方式不同導致視覺效果上的差異。(左)沒有重疊區域 (中)有重疊區域 (右)使用差異最小的路徑</p>*
 
 &emsp;&emsp;在Photo to Monet的例子中，我們使用使用VGG 19對`conv1_1` `conv3_1` `conv5_1`做style reconstruction以生成莫內的texture。source中的patch與source texture，將自己拍的照片當作target image用Image Quilting做texture transfer
 
