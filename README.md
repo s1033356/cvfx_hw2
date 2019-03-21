@@ -96,8 +96,7 @@ Label maps:```labelme```
 ---
 
 ## Neural Style
-Leon Gatys的Neural Style Transfer的思路是通過CNN（VGG-16）分別抽取content img、painting的feature maps。然後用content img的feature maps reconstrut出目標content；用painting的feature maps reconstrut出目標的style。根據生成圖的conten與目標內容的差異來optimize content；用生成圖與目標畫style的差異來optimize style。
-
+Leon Gatys的Neural Style Transfer的思路是通過CNN（pre-trained VGG-16）網路分別抽取內容圖（content）、畫風圖(style)以及生成圖的特徵圖(feature maps)，然後分別用內容特徵和生成特徵圖計算內容損失(Content loss)，用畫風圖和生成圖計算風格損失(Style loss)，將兩個損失合起來，作為總體損失(Total loss)，用總體損失來計算生成圖的梯度然後更新生成圖。框架及流程圖如下所示。
 ![](https://i.imgur.com/127PQpN.png)
 *<center>Convolutional Neural Network (CNN) </center>*
 ![](https://i.imgur.com/07ltGwM.png)
